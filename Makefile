@@ -1,11 +1,11 @@
-include vsn.mk
+ERL ?= erl
+APP := ibrowse
 
 all:
-	(cd src ; make)
+	@./rebar compile
 
 clean:
-	(cd src ; make clean)
+	@./rebar clean
 
-install: all
-	mkdir -p $(DESTDIR)/lib/ibrowse-$(IBROWSE_VSN)/
-	cp -r ebin $(DESTDIR)/lib/ibrowse-$(IBROWSE_VSN)/
+docs:
+	@erl -noshell -run edoc_run application '$(APP)' '"."' '[]'

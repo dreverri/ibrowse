@@ -21,8 +21,8 @@
 	 decode_rfc822_date/1,
 	 status_code/1,
 	 dec2hex/2,
-	 drv_ue/1,
-	 drv_ue/2,
+	 %drv_ue/1,
+	 %drv_ue/2,
 	 encode_base64/1,
 	 decode_base64/1,
 	 get_value/2,
@@ -34,9 +34,9 @@
 get_trace_status(Host, Port) ->
     ibrowse:get_config_value({trace, Host, Port}, false).
 
-drv_ue(Str) ->
-    [{port, Port}| _] = ets:lookup(ibrowse_table, port),
-    drv_ue(Str, Port).
+%drv_ue(Str) ->
+%    [{port, Port}| _] = ets:lookup(ibrowse_table, port),
+%    drv_ue(Str, Port).
 drv_ue(Str, Port) ->
     case erlang:port_control(Port, 1, Str) of
 	[] ->

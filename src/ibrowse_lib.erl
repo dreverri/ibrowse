@@ -22,7 +22,7 @@
 	 status_code/1,
 	 dec2hex/2,
 	 %drv_ue/1,
-	 %drv_ue/2,
+	 drv_ue/2,
 	 encode_base64/1,
 	 decode_base64/1,
 	 get_value/2,
